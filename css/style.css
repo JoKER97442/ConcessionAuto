@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+}
+h1 {
+    text-align: center;
+    color: red;
+}
+.catalogue {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1000px;
+    margin: 0 auto;
+}
+img {
+    max-width: 400px;
+    margin: 0;
+}
+figure {
+    position: relative;
+}
+figcaption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-top: 150px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    background-color: #8080807e;
+    opacity: 0;
+}
+figure:hover figcaption{
+    opacity: 1;
+}

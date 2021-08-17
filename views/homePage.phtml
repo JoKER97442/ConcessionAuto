@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Concession automobile</title>
+</head>
+<body>
+    <h1>Concession automobile</h1>
+    <a href="./form.php?register=true">CONNECTION</a>
+    <a href="./form.php?register=false">REGISTER</a>
+    <?php if (empty($_POST)): ?>
+        <form method="POST">
+        <section class='catalogue'>
+            <?php foreach ($voitures as $voiture => $prix): ?>
+                <button type="submit" name="voiture" value="<?= $voiture ?>">
+                <img src="./img/<?= $voiture ?>.jpg" alt="<?= $voiture ?> à <?= $prix ?>€">   
+                </button>
+                <?php endforeach; ?>
+        </section>
+
+        </form>
+        
+        <form action="" method="POST" style="text-align: center;">
+		<p>Voulez-vous envoyé une invitation / de la publicité au client ?</p>
+		<input type="radio" name="validation" value=true>Oui 
+		<input type="radio" name="validation" value=false>Non
+			<input type="submit" />
+	    </form>
+        
+        <div>
+
+</div>
+    <?php else: ?>
+        <?php foreach ($voitures as $voiture => $prix): ?>
+            <?php if ($voiture === $myVoiture): ?>
+                <figure>
+                    <figcaption><?= $voiture ?><br>Prix : <?= $prix ?>€</figcaption>
+                    <img src="./img/<?= $voiture ?>.jpg" alt="<?= $voiture ?> à <?= $prix ?>€">
+                </figure>
+            <?php endif ?>
+        <?php endforeach; ?>
+  
+    <?php endif; ?>
+    </section>
+</body>
+</html>
